@@ -9,7 +9,14 @@ gem 'sqlite3'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-
+# Use devise for authentication
+gem 'devise'
+# Use semantic ui
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
+# Use delayed_job_active_record to run jobs in the background
+gem 'delayed_job_active_record'
+# Use omniauth-facebook to login with facebook
+gem 'omniauth-facebook'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
