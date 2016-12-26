@@ -4,4 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:confirmable, :lockable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter]
+
+
+
 end
