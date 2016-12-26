@@ -16,7 +16,10 @@ gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 # Use delayed_job_active_record to run jobs in the background
 gem 'delayed_job_active_record'
 # Use omniauth-facebook to login with facebook
+gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
