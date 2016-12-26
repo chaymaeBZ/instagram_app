@@ -4,6 +4,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to create_url
   end
   def twitter
-    redirect_to create_url
+    render text: request.env['omniauth.auth'].to_yaml
   end
 end
