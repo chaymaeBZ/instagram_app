@@ -6,6 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     render text: request.env['omniauth.auth'].to_yaml
   end
   def twitter
+    render text: request.env["omniauth.auth"].info.email.to_yaml
     if @user.persisted?
       sign_in_and_redirect @user #this will throw if @user is not activated
       flash[:green] = "Authenticated to Twitter !"
