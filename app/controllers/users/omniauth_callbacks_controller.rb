@@ -6,7 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
   def twitter
     if @user.persisted?
-      sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+      sign_in_and_redirect @user #this will throw if @user is not activated
       flash[:green] = "Authenticated to Twitter !"
     else
       session["devise.twitter_data"] = request.env["omniauth.auth"]
