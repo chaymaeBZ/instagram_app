@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable, :timeoutable,
+         :lockable, :timeoutable,
           :omniauthable, :omniauth_providers => [:facebook, :twitter]
   class << self
 
@@ -11,7 +11,7 @@ class User < ApplicationRecord
       user = find_or_create_by(uid: auth_hash[:uid], provider: auth_hash[:provider])
       user.name = auth_hash[:info][:name]
       user.email = auth_hash[:info][:email]
-      user.skip_confirmation!
+      user.password = Devise.friendly_token[0,20]
       user.save!
       user
     end
