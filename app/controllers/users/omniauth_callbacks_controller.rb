@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+
   before_action :fetch_user
   def facebook
     #flash[:green] = "Authenticated to Facebook !"
@@ -19,6 +20,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
     def fetch_user
-      @user = User.from_omniauth(request.env['omniauth.auth'])
+      #@user = User.from_omniauth(request.env['omniauth.auth'])
     end
+
 end

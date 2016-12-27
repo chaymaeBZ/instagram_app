@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root 'static_pages#index'
   get 'create', to: 'static_pages#create'
 
